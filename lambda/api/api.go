@@ -81,33 +81,36 @@ func (api ApiHandler) LoginUser(request events.APIGatewayProxyRequest) (events.A
 		Password string `json:"password"`
 	}
 
-	var loginRequest LoginRequest 
+	var loginRequest LoginRequest
 
 	err := json.Unmarshal([]byte(request.Body), &loginRequest)
 	if err != nil {
 		return events.APIGatewayProxyResponse{
-			Body: "Invalid request",
+			Body:       "Invalid request",
 			StatusCode: http.StatusBadRequest,
 		}, err
 	}
 
-	user, err := api.dbStore.GetUser(loginRequest.Username) 
+	user, err := api.dbStore.GetUser(loginRequest.Username)
 	if err != nil {
 		return events.APIGatewayProxyResponse{
-			Body: "Internal server error",
+			Body:       "Internal server error",
 			StatusCode: http.StatusInternalServerError,
-		}, err 
+		}, err
 	}
 
 	if !types.ValidatePassword(user.PasswordHash, loginRequest.Password) {
 		return events.APIGatewayProxyResponse{
-			Body: "Invalid user credentials",
+			Body:       "Invalid user credentials",
 			StatusCode: http.StatusBadGateway,
 		}, nil
 	}
 
+	accessToken := types.CreateToken(user)
+	successMsg := fmt.Sprintf(`{"access_token": "%s"}`, accessToken)
+
 	return events.APIGatewayProxyResponse{
-		Body: "Successfully logged in",
+		Body:       successMsg,
 		StatusCode: http.StatusOK,
 	}, nil
-} 
+}
