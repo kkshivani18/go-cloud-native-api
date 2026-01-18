@@ -1,6 +1,6 @@
 # Cloud Native API with Go and AWS
 
-A serverless user authentication API built with Go, deployed on AWS using AWS CDK. This project demonstrates cloud-native development patterns including infrastructure as code, serverless functions, and secure user authentication.
+A serverless user authentication API built with Go, deployed on AWS using AWS CDK. This project demonstrates cloud-native development patterns including infrastructure as code, serverless functions and secure user authentication.
 
 ## Overview
 
