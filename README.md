@@ -13,7 +13,7 @@ This project implements a RESTful API for user registration and authentication u
 
 ## Architecture
 
-![Project Architecture](<../Cloud-Native API with Go & AWS/images/architecture.png>)
+![Project Architecture](<./images/architecture.png>)
 
 ```
 API Gateway → Lambda Function → DynamoDB
