@@ -226,3 +226,7 @@ The CDK stack creates:
 - `cdk diff`        Compare deployed stack with current state
 - `cdk synth`       Emits the synthesized CloudFormation template
 - `go test`         Run unit tests
+
+### Article on Medium
+
+[Checkout the article on Medium](https://medium.com/@kkrishnashivani18/serverless-go-architecture-with-aws-cdk-5fd65f15b86b)
