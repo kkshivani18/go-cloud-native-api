@@ -106,7 +106,7 @@ github.com/aws/jsii-runtime-go
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
+git clone https://github.com/kkshivani18/go-cloud-native-api.git
 cd "Cloud-Native API with Go & AWS"
 ```
 
