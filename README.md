@@ -44,8 +44,6 @@ API Gateway → Lambda Function → DynamoDB
 - Compares hashed passwords
 - Returns success/failure response
 
-### Left to Implement
-
 **JWT Authentication**
 - Token generation upon successful login
 - Token-based authorization for protected routes
