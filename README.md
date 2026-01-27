@@ -33,13 +33,13 @@ API Gateway → Lambda Function → DynamoDB
 
 ### Current Implementation
 
-✅ **User Registration** (`POST /register`)
+ **User Registration** (`POST /register`)
 - Validates username and password
 - Checks for existing users
 - Hashes passwords using bcrypt
 - Stores user credentials in DynamoDB
 
-✅ **User Login** (`POST /login`)
+ **User Login** (`POST /login`)
 - Validates credentials
 - Compares hashed passwords
 - Returns success/failure response
